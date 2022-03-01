@@ -1,0 +1,150 @@
+import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+
+public class Creature extends Actor
+{
+    final int SPEED = 2;
+    final int IMG_H = new GreenfootImage("ladybug1.png").getHeight();
+    final int IMG_W = new GreenfootImage("ladybug1.png").getWidth();
+    
+    Treat closestTreat = null;
+    String checkDir; // north / south / east / west
+    String strafeDir;
+    
+    public void act()
+    {
+        int SCREEN_WIDTH = getWorld().getWidth();
+        int SCREEN_HEIGHT = getWorld().getHeight();
+        
+        findClosestTreat();
+        smartMove();
+        
+        if (strafeDir != null) {
+            wallMove();
+        }
+        
+        System.out.println("checkDir" + checkDir);
+        System.out.println("strafeDir" + strafeDir);
+        eatCoin();
+    }
+    
+    public void wallMove() {
+        // set reasonable default
+        if (strafeDir == null) {
+            if (strafeDir.equals("east") || strafeDir.equals("west"))
+                strafeDir = "south";
+            else
+                strafeDir = "east";
+        }
+        
+        if (strafeDir.equals("south")) {
+            // check if it can strafe; otherwise, reverse
+            if (!isWalless(0, SPEED)) {
+                strafeDir = "north";
+            } else {
+                setLocation(getX(), getY() + SPEED);
+                
+                // check if sides free
+                if (checkDir.equals("east")) {
+                    if (isWalless(SPEED + IMG_W/2, 0)) resetDirs();
+                } else {
+                    if (isWalless(-SPEED - IMG_W/2, 0)) resetDirs();
+                }
+            }
+        } else if (strafeDir.equals("north")) {
+            // check if it can strafe; otherwise, reverse
+            if (!isWalless(0, -SPEED)) {
+                strafeDir = "south";
+            } else {
+                setLocation(getX(), getY() - SPEED);
+                
+                // check if sides free
+                if (checkDir.equals("east")) {
+                    if (isWalless(SPEED + IMG_W/2, 0)) resetDirs();
+                } else {
+                    if (isWalless(-SPEED - IMG_W/2, 0)) resetDirs();
+                } 
+            }
+        } else if (strafeDir.equals("east")) {
+            // check if it can strafe; otherwise, reverse
+            if (!isWalless(SPEED, 0)) {
+                strafeDir = "west";
+            } else {
+                setLocation(getX() + SPEED, getY());
+                // check if sides free
+                if (checkDir.equals("north")) {
+                    if (isWalless(0, SPEED + IMG_H/2)) resetDirs();
+                } else {
+                    if (isWalless(0, -SPEED - IMG_H/2)) resetDirs();
+                }
+            }
+        } else if (strafeDir.equals("west")) {
+            // check if it can strafe; otherwise, reverse
+            if (!isWalless(-SPEED, 0)) {
+                strafeDir = "east";
+            } else {
+                setLocation(getX() - SPEED, getY());
+                // check if sides free
+                if (checkDir.equals("north")) {
+                    if (isWalless(0, SPEED + IMG_H/2)) resetDirs();
+                } else {
+                    if (isWalless(0, -SPEED - IMG_H/2)) resetDirs();
+                }    
+            }
+        }
+    }
+    
+    public void smartMove() {    
+        if (getX() < closestTreat.getX()) {
+            if (isWalless(SPEED + IMG_W/2, 0)) setLocation(getX() + SPEED, getY());
+            else checkDir = "east";
+        } else if (getX() > closestTreat.getX()) {
+            if (isWalless(-SPEED - IMG_W/2, 0)) setLocation(getX() - SPEED, getY());
+            else checkDir = "west";
+        }
+        
+        if (getY() < closestTreat.getY()) {
+            if (isWalless(0, SPEED + IMG_H/2)) setLocation(getX(), getY() + SPEED);
+            else checkDir = "south";
+        } else if (getY() > closestTreat.getY()) {
+            if (isWalless(0, -SPEED - IMG_H/2)) setLocation(getX(), getY() - SPEED);
+            else checkDir = "north";
+        }
+    }
+    
+    public void findClosestTreat() {
+        closestTreat = null;
+        int rad = 0;
+        
+        while (closestTreat == null) {
+            rad += 10;
+            if (getObjectsInRange(rad, Treat.class).size() > 0)
+                closestTreat = getObjectsInRange(rad, Treat.class).get(0);
+        }
+    }
+    
+    public boolean isWalless(int dx, int dy) {
+        return (getOneObjectAtOffset(dx, dy, Wall.class) == null);
+    }
+    
+    public void resetDirs() {
+        checkDir = null;
+        strafeDir = null;
+    }
+    
+    public void eatCoin() {
+        if (getOneIntersectingObject(Treat.class) != null) {
+            getWorld().removeObject(getOneIntersectingObject(Treat.class));
+        }
+    }
+
+    public void randomlyMove() {
+        int angle = Greenfoot.getRandomNumber(21) - 10;
+        turn(angle);
+        move(SPEED);
+        
+        if (getOneIntersectingObject(Wall.class) != null) {
+            turn(180);
+            move(SPEED);
+        }
+    }
+}

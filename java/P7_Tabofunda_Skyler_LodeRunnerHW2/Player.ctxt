@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=Player
+comment1.params=
+comment1.target=void\ Player()
+comment2.params=
+comment2.target=void\ act()
+comment3.params=
+comment3.target=void\ movePlayer()
+comment4.params=
+comment4.target=void\ fixPosition()
+comment5.params=
+comment5.target=void\ updatePosition()
+comment6.params=animType\ dir
+comment6.target=void\ updateAnimation(java.lang.String,\ java.lang.String)
+comment7.params=dx\ dy
+comment7.target=boolean\ wallAtOffset(int,\ int)
+comment8.params=
+comment8.target=boolean\ onLadder()
+numComments=9

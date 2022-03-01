@@ -1,0 +1,28 @@
+#BlueJ class context
+comment0.target=Pen
+comment0.text=\ Access\ Modifiers\ (this\ demo\ focuses\ only\ on\ public\ and\ private)\n\ since\ we\ are\ not\ making\ other\ packages\ or\ subclasses\ yet\:\n\ public\:\ accessible\ from\ any\ other\ class\n\ private\:\ only\ accessible\ in\ this\ class\n\ protected\:\ accessible\ in\ this\ class,\ subclasses\ and\ classes\ in\ same\ package\n\ package\ private\ (no\ modifier)\:\ Accessible\ in\ this\ class\ and\ classes\ in\ same\ package\n
+comment1.params=
+comment1.target=Pen()
+comment1.text=default\ constructor
+comment2.params=width
+comment2.target=Pen(int)
+comment2.text=constructor\ that\ specifies\ the\ width
+comment3.params=width\ color
+comment3.target=Pen(int,\ java.lang.String)
+comment3.text=\ constructor\ that\ specifies\ the\ width\ and\ color\n\ the\ this\ keyword\ refers\ to\ the\ instance\ of\ Pen\ that\ is\ being\n\ initialized\ in\ the\ constructor.\ Since\ the\ local\ variable\ color\n\ (declared\ as\ a\ parameter)\ is\ the\ same\ name\ as\ the\ instance\n\ variable\ color,\ you\ need\ to\ use\ the\ this\ keyword\ to\ access\n\ the\ color\ instance\ variable.\n
+comment4.params=
+comment4.target=void\ printDefaults()
+comment4.text=\ printDefaults\ is\ a\ static\ method,\ so\ it\ a\ method\ that\ can\ be\ called\ on\n\ the\ class.\ You\ don't\ need\ to\ create\ an\ instance\ of\ the\ class\ to\ call\n\ a\ static\ method.\n\ Since\ it\ is\ public,\ it\ can\ be\ called\ from\ other\ classes\ using\ the\ dot\n\ notation\ to\ call\ the\ method\ on\ the\ Pen\ class\:\n\ Pen.printDefaults()\n
+comment5.params=
+comment5.target=java.lang.String\ getColor()
+comment5.text=\ getter\ for\ color\n\ getColor()\ is\ an\ instance\ method\ because\ it\ doesn't\ say\ static,\ so\ it\n\ must\ be\ called\ on\ a\ specific\ instance\ of\ a\ Pen.\ It\ is\ public,\ so\ it\n\ can\ be\ called\ from\ other\ classes\ using\ dot\ notation\ to\ call\ the\ method\n\ on\ an\ instance\ of\ a\ Pen\:\n\ Pen\ thePen\ \=\ new\ Pen();\ //\ instantiate\ a\ Pen\ object\n\ String\ c\ \=\ thePen.getColor();\ //\ call\ getColor()\ on\ thePen\n
+comment6.params=color
+comment6.target=void\ setColor(java.lang.String)
+comment6.text=setter\ for\ color
+comment7.params=x\ y
+comment7.target=void\ moveTo(int,\ int)
+comment7.text=\ an\ instance\ method\ that\ changes\ the\ location\n\ If\ you\ look\ at\ the\ Point\ API,\ you\ will\ see\ that\n\ it\ has\ public\ instance\ variables\ x\ and\ y,\ so\ you\n\ can\ access\ those\ values\ directly\ and\ set\ them\ to\n\ new\ values.\n
+comment8.params=
+comment8.target=java.lang.String\ toString()
+comment8.text=\ If\ you\ write\ a\ toString()\ method\ for\ a\ class,\ then\ when\ you\ print\n\ an\ instance\ of\ your\ class,\ it\ will\ print\ result\ of\ calling\n\ toString()\ on\ the\ object\ you\ printed.\n
+numComments=9
