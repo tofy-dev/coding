@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=Movable
+comment1.params=
+comment1.target=void\ fixPosition()
+comment2.params=
+comment2.target=void\ updatePosition()
+comment3.params=animType\ dir
+comment3.target=void\ updateAnimation(java.lang.String,\ java.lang.String)
+comment4.params=
+comment4.target=boolean\ onWall()
+comment5.params=
+comment5.target=boolean\ onLadder()
+comment6.params=
+comment6.target=boolean\ onBar()
+comment7.params=dx\ dy
+comment7.target=boolean\ wallAtOffset(int,\ int)
+comment8.params=
+comment8.target=java.util.ArrayList\ touchingBars()
+numComments=9

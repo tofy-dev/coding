@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=MousePlayer
+comment0.text=\n\ Write\ a\ description\ of\ class\ MousePlayer\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=
+comment1.target=MousePlayer()
+comment2.params=
+comment2.target=void\ act()
+comment3.params=
+comment3.target=void\ movePlayer()
+comment4.params=
+comment4.target=void\ updateMousePos()
+numComments=5
