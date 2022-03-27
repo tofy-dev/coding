@@ -1,0 +1,15 @@
+#BlueJ class context
+comment0.target=Menu
+comment1.params=
+comment1.target=Menu()
+comment2.params=
+comment2.target=void\ act()
+comment3.params=isRed
+comment3.target=void\ updateButton(boolean)
+comment4.params=
+comment4.target=boolean\ isHovering()
+comment5.params=
+comment5.target=void\ drawTitleText()
+comment6.params=
+comment6.target=void\ drawPlayButton()
+numComments=7

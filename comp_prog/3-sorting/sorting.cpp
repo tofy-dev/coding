@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+#include <string>
 #include "libs/structs.h"
 using namespace std;
 
@@ -35,12 +36,26 @@ array<int, size> counting_sort(array<int, size>& arr) {
   return conv_map(omap, sorted);
 }
 
-int main() {
-  array<int, 500> unsorted;
-  for (int i = 0; i < unsorted.size(); i++) {
-    unsorted[i] = rand() % 100;
+template <size_t size>
+string binary_search(array<int, size>& arr, int x) {
+  int a = 0, b = arr.size()-1;
+  while (a <= b) {
+    int k = (a+b)/2;
+    if (arr[k] == x) {
+      return "found at arr[" + to_string(k) + "]";
+    }
+    if (arr[k] > x) b = k-1;
+    else a = k+1;
   }
+  return "not found :(";
+}
 
-  print_arr(unsorted);
-  print_arr(counting_sort(unsorted));
+int main() {
+  array<int, 10> arr;
+  for (int i = 0; i < arr.size(); i++) {
+    arr[i] = i;
+  }
+  
+  print_arr(arr);
+  cout << binary_search(arr, 8);
 }

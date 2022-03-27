@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.target=Animal
+comment1.params=
+comment1.target=Animal()
+comment2.params=
+comment2.target=void\ act()
+comment3.params=
+comment3.target=void\ updateDir()
+comment4.params=
+comment4.target=void\ move()
+comment5.params=
+comment5.target=void\ moveRandomly()
+comment6.params=notDir
+comment6.target=void\ moveRandomly(java.lang.String)
+comment7.params=
+comment7.target=void\ updatePos()
+numComments=8

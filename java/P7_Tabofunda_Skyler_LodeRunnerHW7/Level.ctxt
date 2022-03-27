@@ -1,0 +1,23 @@
+#BlueJ class context
+comment0.target=Level
+comment1.params=
+comment1.target=Level()
+comment10.params=sX\ sY
+comment10.target=void\ drawGold(int,\ int)
+comment2.params=
+comment2.target=void\ act()
+comment3.params=
+comment3.target=void\ updateScore()
+comment4.params=
+comment4.target=void\ updateHUD()
+comment5.params=
+comment5.target=void\ initWorld()
+comment6.params=sX\ sY\ num
+comment6.target=void\ drawBrickRow(int,\ int,\ int)
+comment7.params=sX\ sY
+comment7.target=void\ drawBrickRow(int,\ int)
+comment8.params=sX\ sY\ num
+comment8.target=void\ drawLadder(int,\ int,\ int)
+comment9.params=sX\ sY\ num
+comment9.target=void\ drawBarRow(int,\ int,\ int)
+numComments=11

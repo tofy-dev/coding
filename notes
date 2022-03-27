@@ -1,0 +1,11 @@
+c++ ===============================================================================================
+Pointers> variables that store addresses
+Dereference> the value at a memory address
+=> coincidentally, they both use the "*" symbol
+
+lower_bound 
+=> first element that's at LEAST x (ret ptr.)
+upper_bound
+=> last element that's at LEAST x (ret ptr.)
+equal_range
+=> returns both pointers (as a pair, presumably)

@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=Player
+comment1.params=
+comment1.target=Player()
+comment2.params=
+comment2.target=void\ movePlayer()
+comment3.params=
+comment3.target=boolean\ isGold()
+comment4.params=
+comment4.target=boolean\ isTouchingEnemy()
+numComments=5
