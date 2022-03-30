@@ -9,8 +9,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class MyLevelWorld extends LevelWorld {
     private Color BRICK_BLUE = new Color(41, 177, 255);
     
-    private GreenfootImage scorePlat, livesPlat, levelPlat;
-    private int level, lives, score; 
+    private Text scorePlat, livesPlat, levelPlat;
+    private int level, lives, score, newScore; 
     private Player player;
     
     // static initialization code - runs when the class is loaded, before the main method is called.
@@ -33,38 +33,48 @@ public class MyLevelWorld extends LevelWorld {
         this.score = score;
         this.lives = lives;
         this.level = level;
+        newScore = score;
         
         player = getObjects(Player.class).get(0);
+        drawHUD();
     }
     
     public void act() {
         if (player.isGold())
-            score += 250;
+            updateScore();
         if (player.isTouchingEnemy()) {
-            MyLevelWorld newWorld = new MyLevelWorld(score, --lives, level);
-            Greenfoot.setWorld(newWorld);
+            if (--lives == 0) {
+                Greenfoot.setWorld(new EndScreen("YOU LOST!"));
+            } else {
+                Greenfoot.setWorld(new MyLevelWorld(score, lives, level));
+            }
         } else if (getObjects(Gold.class).size() < 1) {
             try {
-                Greenfoot.setWorld(new MyLevelWorld(score, lives, ++level));
+                Greenfoot.setWorld(new MyLevelWorld(newScore, lives, ++level));
             } catch(Exception e) {
-                Greenfoot.setWorld(new EndScreen());
+                Greenfoot.setWorld(new EndScreen("YOU WON!"));
             }
         }
-        updateHUD();
     }
     
     // draw score, lives, level
-    public void updateHUD() {
+    public void drawHUD() {
         int platW = getWidth()/3, platH = new GreenfootImage("bricks.png").getWidth();
+        scorePlat = new Text("SCORE " + score, 2*platH, BRICK_BLUE, Color.BLACK);
+        addObject(scorePlat, scorePlat.getImage().getWidth()/2, getHeight()-scorePlat.getImage().getHeight()/2);
         
-        scorePlat = new GreenfootImage("SCORE " + score, platH, BRICK_BLUE, Color.BLACK);
-        getBackground().drawImage(scorePlat, 0, getHeight()-platH);
+        livesPlat = new Text("LIVES " + lives, 2*platH, BRICK_BLUE, Color.BLACK);
+        addObject(livesPlat, getWidth()/2, getHeight()-scorePlat.getImage().getHeight()/2);
         
-        livesPlat = new GreenfootImage("LIVES " + lives, platH, BRICK_BLUE, Color.BLACK);
-        getBackground().drawImage(livesPlat, getWidth()/2-livesPlat.getWidth()/2, getHeight()-platH);
-        
-        levelPlat = new GreenfootImage("LEVEL " + level, platH, BRICK_BLUE, Color.BLACK);
-        getBackground().drawImage(levelPlat, getWidth()-levelPlat.getWidth(), getHeight()-platH);
+        levelPlat = new Text("LEVEL " + level, 2*platH, BRICK_BLUE, Color.BLACK);
+        addObject(levelPlat, getWidth()-levelPlat.getImage().getWidth()/2, getHeight()-scorePlat.getImage().getHeight()/2);
+    }
+    
+    public void updateScore() {
+        int platW = getWidth()/3, platH = new GreenfootImage("bricks.png").getWidth();
+        newScore += 250;
+        scorePlat.setImage(new GreenfootImage("SCORE " + newScore, 2*platH, BRICK_BLUE, Color.BLACK));
+        scorePlat.setLocation(scorePlat.getImage().getWidth()/2, getHeight()-scorePlat.getImage().getHeight()/2);
     }
     
     
@@ -78,5 +88,6 @@ public class MyLevelWorld extends LevelWorld {
         getLoader().setBarClass(Bar.class); // you can remove this if you have no bars in your game
         getLoader().setEnemyClass(Enemy.class); // you can remove this if you have no enemies in your game
         getLoader().setGoldClass(Gold.class); // you can remove this if you have no gold in your game
+        getLoader().setFalseWallClass(FalseBrick.class);
     }
 }

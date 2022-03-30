@@ -2,8 +2,6 @@
 comment0.target=Menu
 comment1.params=
 comment1.target=Menu()
-comment2.params=msg\ size\ fClr\ bClr
-comment2.target=Text\ drawText(java.lang.String,\ int,\ greenfoot.Color,\ greenfoot.Color)
-comment3.params=button
-comment3.target=boolean\ isHovering(Text)
-numComments=4
+comment2.params=button
+comment2.target=boolean\ isHovering(Text)
+numComments=3

@@ -1,19 +1,9 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-/**
- * Write a description of class Text here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class Text extends Actor
 {
-    /**
-     * Act - do whatever the Text wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    public void act()
-    {
-        // Add your action code here.
+    public Text(String msg, int size, Color fClr, Color bClr) {
+        GreenfootImage img = new GreenfootImage(msg, size, fClr, bClr);
+        this.setImage(img);
     }
 }

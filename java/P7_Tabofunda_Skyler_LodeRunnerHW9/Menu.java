@@ -11,16 +11,8 @@ public class Menu extends World {
         bg.setColor(Color.BLACK);
         bg.fill();
     }
-
-    public Text drawText(String msg, int size, Color fClr, Color bClr) {
-        Text txt = new Text();
-        GreenfootImage img = new GreenfootImage(msg, size, fClr, bClr);
-        txt.setImage(img);
-        addObject(txt, 0, 0);
-        return txt;
-    }
     
-    public boolean isHovering(Text button) {
+    protected boolean isHovering(Text button) {
         MouseInfo mi = Greenfoot.getMouseInfo();
         return (mi != null &&
                mi.getX() >= button.getX()-button.getImage().getWidth()/2 &&

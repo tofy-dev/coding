@@ -2,19 +2,19 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.ArrayList;
 
 public class StartScreen extends Menu {
-    Text title = new Text();
-    Text button = new Text();
+    Text title;
+    Text button;
     
     int DELAY_AMT = 50;
     int frame = 0;
     
     public StartScreen() { 
         super();
-        title = drawText("LODE RUNNER", 100, BRICK_BLUE, Color.BLACK); 
-        title.setLocation(getWidth()/2, title.getImage().getHeight()/2);
+        title = new Text("LODE RUNNER", 100, BRICK_BLUE, Color.BLACK); 
+        addObject(title, getWidth()/2, title.getImage().getHeight()/2);
         
-        button = drawText("CLICK TO PLAY", 70, BUTTON_RED, Color.BLACK);
-        button.setLocation(getWidth()/2, getHeight()/2);
+        button = new Text("CLICK TO PLAY", 70, BUTTON_RED, Color.BLACK);
+        addObject(button, getWidth()/2, getHeight()/2);
     }
     
     public void act() {
@@ -34,7 +34,7 @@ public class StartScreen extends Menu {
         }
     }
     
-    public void updateButton(boolean isRed) {
+    protected void updateButton(boolean isRed) {
         Color fClr = isRed ? BUTTON_RED : Color.BLACK;
 
         if (isHovering(button)) {

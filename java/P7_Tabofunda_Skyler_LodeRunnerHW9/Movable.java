@@ -46,7 +46,7 @@ public class Movable extends Actor
         } else if (dir == "left") {
             if (onBar()) {
                 playerY = touchingBars().get(0).getY()+8;
-                playerX -= SPEED/2;
+                playerX -= SPEED*3/2;
                 updateAnimation("hang", "left");
             } else {
                 playerX -= SPEED;
@@ -55,7 +55,7 @@ public class Movable extends Actor
         } else if (dir == "right") {
             if (onBar()) {
                 playerY = touchingBars().get(0).getY()+8;
-                playerX += SPEED/2;
+                playerX += SPEED*3/2;
                 updateAnimation("hang", "right");
             } else {
                 playerX += SPEED;
