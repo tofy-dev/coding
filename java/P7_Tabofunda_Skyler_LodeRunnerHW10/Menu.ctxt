@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=Menu
+comment1.params=
+comment1.target=Menu()
+comment2.params=button
+comment2.target=boolean\ isHovering(Text)
+numComments=3

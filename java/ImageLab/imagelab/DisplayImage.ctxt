@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.params=imp\ title
+comment0.target=DisplayImage(ImgProvider,\ java.lang.String)
+comment0.text=\r\n\ \ \ \ The\ constructor\ takes\ the\ Image\ object\ to\ display\ and\ a\ String\ to\ use\ as\ the\ title\r\n\ \ \ \ of\ the\ window.\r\n
+comment1.params=visible
+comment1.target=void\ setVisible(boolean)
+comment2.params=
+comment2.target=void\ setActive()
+comment2.text=Notification\ that\ this\ window\ has\ become\ active
+numComments=3

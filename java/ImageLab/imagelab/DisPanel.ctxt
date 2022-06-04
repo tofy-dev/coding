@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.params=im
+comment0.target=DisPanel(java.awt.Image)
+comment0.text=\r\n\tThe\ constructor\ takes\ the\ Image\ object\ to\ display.\r\n
+comment1.params=g
+comment1.target=void\ paint(java.awt.Graphics)
+numComments=2

@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=MyLevelWorld
+comment0.text=\n\ use\ this\ class\ as\ a\ starting\ point\ for\ your\ Lode\ Runner.\ Transfer\ any\ extra\ methods\ or\ fields\ you\ need\ from\ your\ original\ class.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=
+comment1.target=MyLevelWorld()
+comment2.params=score\ lives\ level
+comment2.target=MyLevelWorld(int,\ int,\ int)
+comment3.params=
+comment3.target=void\ act()
+comment4.params=
+comment4.target=void\ drawHUD()
+comment5.params=
+comment5.target=void\ updateScore()
+comment6.params=
+comment6.target=void\ defineClassTypes()
+numComments=7

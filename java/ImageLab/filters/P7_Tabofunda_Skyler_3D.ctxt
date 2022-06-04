@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=P7_Tabofunda_Skyler_3D
+comment0.text=\n\ Skyler\ Tabofunda\n\ P7\n\ 5/15\n\ 3D\ effect\n
+comment1.params=ip
+comment1.target=void\ filter(imagelab.ImgProvider)
+comment2.params=
+comment2.target=imagelab.ImgProvider\ getImgProvider()
+comment3.params=
+comment3.target=java.lang.String\ getMenuLabel()
+numComments=4
